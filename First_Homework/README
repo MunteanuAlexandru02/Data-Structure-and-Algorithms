@@ -1,0 +1,42 @@
+README pentru rezolvarea temei 1 - SDA
+
+In componenta temei se afla 4 fisiere:
+        tema.c - componenta principala a temei, care contine main-ul si alte
+        functii utile pentru initializare, afisare, adaugare nod, s.a.m.d pentru
+        lista principala (list);
+        vector_apar.h - contine functii utile pentru crearea unei liste de aparitii
+        st.h - functii crearea unui interval, dar si a unei liste de aparitii
+        c.h - contine o singura functie, pentru obtinerea lui w, conform cerintei.
+
+    In main, vom citi lungimea listei, dar si elementele acesteia, apoi, intr-un for,
+vom parcurge argumentele, incercand sa identificam cerintele(e1,e2,e3,u,c,st)
+
+    Pentru e1: Folosim un vector de aparitii, pentru a verifica daca un numar
+indeplineste cerinta. Primele 2, si ultimele doua elemente vor fi, automat, pastrate in lista,
+apoi ne vom folosi de functiile "medie" si  "tau", pentru a verifica cerinta, folosind functia
+"verificare". Daca un numar indeplineste cerinta, "verificare" va returna 1, altfel, 0.
+Vectorul de aparitii va fi actualizat cu valoare ce va fi returnata de functie.
+
+
+    Pentru e2: Folosim o lista auxiliara, in care vom retine, numerele aflate in mijlocul unei subliste,
+dupa sortarea acesteia, conform cerintei. La final, lista principala, care va fi afisata la finalul
+programului, va fi suprascrisa cu lista auxiliara.
+
+    Pentru e3: Vom calcula media aritmetica si vom adauga intr-o lista auxiliara, timestamp-ul 
+nodului si noua valoare obtinuta, conform cerintei. Lista principala va fi suprascrisa cu lista
+auxiliara.
+
+    Pentru u: Vom folosi o valoare auxiliara, care va contine diferenta de timestamp dintre doua
+noduri consecutive, apoi, vom verifica daca valoare apartine intervalului [100,1000], conform cerintei.
+Daca apartine, vom schimba valorile, conform cerintei, altfel, vom trece la urmatorul nod.
+
+    Pentru st: Folosind "atoi", vom retine in lambda, valoare de incrementare a unui interval,
+iar in maxim si minim, vom retine maximul si minimul din lista, aproximat la cel mai mare, respectiv
+cel mai mic. Apoi construim o lista in care se vor retine capetele diferitelor intervale, folosind,
+ulterior, lista pentru a numara aparitiile unor elemente din interval. La final, afisam intervalele
+si aparitiile.
+
+    Pentru c: Vom folosi o variabila auxiliara in care vom retine diferenta dintre doua
+timestamp-uri, si o vom compara cu 1000, conform cerintei. Vom porni de la timestamp-ul original
++ 200, pana cand, valoare noului timestamp este >= cu timestamp-ul celuilalt nod.
+La fiecare pas, vom adauga in lista noul timestamp si noua valoare, obtinute conform cerintei.

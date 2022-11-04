@@ -1,0 +1,57 @@
+README Tema 2 SDA
+
+Munteanu Alexandru-Constantin 311CC
+Timp de implementare 20 de ore
+
+Programul are rolul de a rezolva cerintele Temei 2:
+
+Pentru a rezolva cerintele am folosit urmatoarele functii si structuri:
+
+Structuri:
+    1. QuadtreeNode: structura indicata in cerinta
+    2. RGB: structura care va retine codificare unui pixel:red,green,blue
+    3. node: structura care va fi folosita pentru construirea unui arbore
+de culori
+    4. tree: o structura ajutatoare in care voi retine radacina unui arbore,
+dar si numarul de noduri si de culori prezente in imagine
+
+Functii:
+    medie_arit: functie care returneaza un element de tip RGB, acesta,
+avand valorile medii prezente intr-o submatrice
+    mean: functie care va returna un scor calculat conform formulei
+prezentate in cerinte 
+    init_tree: functie care are rolul de a aloca memorie pentru un arbore
+    create_node: functia construieste un nod
+    create_tree: functia creeaza un nod conform cerintei si il adauga in
+arbore, apoi apelam recursiv pentru cele 4 submatrice
+    create_vector: functia care are rolul de a construi un vector dintr-un
+arbore. M-am folosit de vectorul "pos" pentru a retine pozitiile urmatoarelor
+noduri carora le vom atribui fii. Apelam recursiv pentru fiecare copil nenul.
+    convert_vect_tree: construim un arbore dintr-un vector, de fiecare data 
+cand gasim un nod null, inseram un element din vector, apoi, apelam recursiv
+pentru fiecare copil
+    create_matrix: construim o matrice de pixeli dintr-un arbore. pentru 
+fiecare element al arborelui "coloram" in matrice zona atribuita nodului.
+    rotate_h: functia roteste orizontal imaginea, realizand o interschimbare
+a nodurilor conform cerintei
+    rotate_v: functia roteste vertical imaginea, analog functiei "rotate_h"
+    free_tree: functia care elibereaza memoria asociata arborelui
+
+    Pentru rezolvarea primei cerinte am citit imaginea ppm, cu detaliile 
+asociate acesteia, in "matrix" am retinut codificarea imaginii din fisier,
+apoi, am construit un arbore in care am retinut datele din matrice. Folosind
+functia "create_vector" am construit vectorul cu toate informatiile din arbore.
+La final, scriem in fisierul binar datele necesare: numarul de culori, numarul
+de noduri si datele din vector si eliberam memoria.
+
+    Pentru rezolvarea cerintei 2: citesc din fisier datele: numarul de culori,
+numarul de noduri si datele din vector, apoi, folosind functia 
+"convert_vect_tree", construiesc un arbore al imaginii comprimate, urmand a 
+aloca memorie pentru o matrice in care vom construi imaginea comprimata.
+La final afisez datele necesare in fisierul .ppm si eliberez memoria.
+
+    Pentru rezolvarea cerintei 3: citesc datele din fisierul .ppm, apoi
+construiesc arborele asociat imaginii. Apoi, in functie de modalitatea de
+rotire dorita apelez doua functii diferite rotate_h si rotate_v. La final,
+construiesc asociata imaginii, afisez datele in fisierul .ppm si eliberez
+memoria.
